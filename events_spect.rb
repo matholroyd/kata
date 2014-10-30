@@ -10,5 +10,13 @@ events = [
 ]
 
 describe Events do
-  
+  context "group_and_count" do
+    
+    context "counting groups" do
+      it "should count 1 if just 1 unique item, 1 level deep" do 
+        Events.new([{event: 'a'}]).group_and_count(['event']).should == {"a" => 1}
+      end
+    end
+    
+  end
 end
