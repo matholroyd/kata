@@ -20,7 +20,7 @@ describe Events do
         }
       end
       
-      # Hmmm...actually this test case is specified. Leave for now
+      # Hmmm...actually this test case is NOT specified. Leave for now
       # it "should not include items that do not match the group" do
       #
       #   Events.new([
