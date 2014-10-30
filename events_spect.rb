@@ -51,7 +51,7 @@ describe Events do
       it "should not include un-groupped properties in th results" do
         Events.new([
           {event: 'a', city: 'x'},
-          {event: 'b', city: 'x', something_esle: 'blah blah'}
+          {event: 'b', city: 'x', something_elee: 'blah blah'}
         ]).group_and_count(['event', 'city']).should == {
           "a" => {
             'x' => 1,
