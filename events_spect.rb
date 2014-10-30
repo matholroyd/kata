@@ -31,6 +31,22 @@ describe Events do
       #   }
       # end
 
+      it "should count different groups properly, 2 levels deep" do
+        Events.new([
+          {event: 'a', city: 'x'},
+          {event: 'a', city: 'x'},
+          {event: 'a', city: 'y'},
+          {event: 'b', city: 'x'}
+        ]).group_and_count(['event', 'city']).should == {
+          "a" => {
+            'x' => 2,
+            'y' => 1
+          },
+          "b" => {
+            'x' => 1
+          }
+        }
+      end
       
       
     end
