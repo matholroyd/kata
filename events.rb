@@ -15,12 +15,10 @@ class Events
     group = groups.first.to_sym
 
     result = events.group_by { |e| e[group] }
-    if groups.count == 1
-      result.each do |k, v|
+    result.each do |k, v|
+      if groups.count == 1
         result[k] = v.count
-      end
-    else
-      result.each do |k, v|
+      else
         result[k] = group_and_count(groups.last(groups.count-1), v)
       end
     end
